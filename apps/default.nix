@@ -9,8 +9,9 @@
     inputs.home-manager.nixosModules.home-manager
   ];
   home-manager = {
+    extraSpecialArgs = { inherit inputs; };
     useGlobalPkgs = true;
-    user.soulcee = {
+    users.soulcee = {
       imports = [ ./home.nix ];
     };
   };
