@@ -1,6 +1,9 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
+  imports = [
+    ./alacritty.nix
+  ];
   environment.systemPackages = with pkgs; [
     alacritty
     librewolf
