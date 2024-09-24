@@ -2,7 +2,7 @@
 
 {
   imports = [
-    ./alacritty.nix
+    #./alacritty.nix
   ];
   environment.systemPackages = with pkgs; [
     alacritty
