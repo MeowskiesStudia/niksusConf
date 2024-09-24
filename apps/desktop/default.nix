@@ -44,7 +44,7 @@
   home-manager = {
     extraSpecialArgs = { inherit inputs; };
     users = {
-      soulcee = import ./home.nix
+      soulcee = import ./home.nix;
     };
   };
 }
