@@ -4,6 +4,7 @@
   imports = [
     #./alacritty.nix
     #./swayfx
+    inputs.home-manager.nixosModules.home-manager
   ];
 
   environment.systemPackages = with pkgs; [
@@ -37,6 +38,13 @@
     pipewire = {
       enable = true;
       pulse.enable = true;
+    };
+  };
+
+  home-manager = {
+    extraSpecialArgs = { inherit inputs; };
+    users = {
+      soulcee = import ./home.nix
     };
   };
 }

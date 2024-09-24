@@ -8,6 +8,10 @@
       url = "github:nix-community/nixvim";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    home-manager = {
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = { self, nixpkgs, ... } @inputs:
@@ -18,14 +22,11 @@
     imports = [
       #./apps/programming/nixvim/flake.nix
     ];
-
-    #systems = [ "x86_64-linux" ];
     flake = {
       nixosConfigurations.hand-niksus = nixpkgs.lib.nixosSystem {
         specialArgs = { inherit inputs; };
         modules = [
           ./configuration.nix
-          #inputs.nixvim.nixosModules.nixvim
         ];
       };
     };
