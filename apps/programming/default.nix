@@ -10,7 +10,6 @@
   environment.systemPackages = with pkgs; [
     dotnetCorePackages.sdk_9_0
     wget
-    #vim
     git
     gh
   ];

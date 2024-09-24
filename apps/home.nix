@@ -1,6 +1,9 @@
 { config, pkgs, ... }:
 
 {
+  imports = [
+    ./games
+  ];
   home.username = "soulcee";
   home.homeDirectory = "/home/soulcee";
 
@@ -13,7 +16,13 @@
     # (pkgs.writeShellScriptBin "my-hello" ''
     #   echo "Hello, ${config.home.username}!"
     # '')
+    fish
     swayfx
+    alacritty
+    discord
+    sonic-visualiser
+    neofetch
+    polychromatic
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -61,6 +70,16 @@
       pull.rebase = false;
     };
   };
+
+  programs.fish.enable = true;
+
+  services.xserver = {
+    xkb = {
+      layout = "de";
+      variant = "nodeadkeys";
+    };
+  };
+
   programs.home-manager.enable = true;
 }
 
