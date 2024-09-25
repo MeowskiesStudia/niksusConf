@@ -11,5 +11,4 @@
     ckan
     heroic
   ];
-  programs.steam.enable = true;
 }
