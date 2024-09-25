@@ -25,8 +25,8 @@
         enable = true;
         wayland = true;
       };
-      sessionPackages = [ pkgs.sway ];
     };
+    displayManager.sessionPackages = [ pkgs.sway ];
     desktopManager.plasma6.enable = true;
 
     xserver = {
