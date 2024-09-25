@@ -17,7 +17,7 @@
   services = {
     displayManager = {
       sddm.enable = true;
-      xserver.plasma6.enable = true;
+      plasma.enable = true;
     };
 
     xserver.enable = true;
