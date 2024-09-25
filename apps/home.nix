@@ -4,6 +4,7 @@
   imports = [
     ./games
     ./programming/git.nix
+    ./desktop/swayfx
   ];
   home.username = "soulcee";
   home.homeDirectory = "/home/soulcee";
