@@ -8,7 +8,7 @@
   home.username = "soulcee";
   home.homeDirectory = "/home/soulcee";
 
-  home.stateVersion = "24.11"; # Please read the comment before changing.
+  home.stateVersion = "24.11";
 
   home.packages = with pkgs; [
     # # You can also create simple shell scripts directly inside your
