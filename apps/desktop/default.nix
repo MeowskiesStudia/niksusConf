@@ -14,10 +14,8 @@
     gdm
   ];
 
-  #programs.fish.enable = true;
-
   services = {
-    displayManager.gdm.enable = true;
+    xserver.displayManager.gdm.enable = true;
     desktopManager.plasma6.enable = true;
 
     xserver = {
