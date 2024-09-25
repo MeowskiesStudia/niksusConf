@@ -20,9 +20,12 @@
   #};
 
   services = {
-    xserver.displayManager.gdm = {
-      enable = true;
-      wayland = true;
+    xserver.displayManager = {
+      gdm = {
+        enable = true;
+        wayland = true;
+      };
+      sessionPackages = [ pkgs.sway ];
     };
     desktopManager.plasma6.enable = true;
 
