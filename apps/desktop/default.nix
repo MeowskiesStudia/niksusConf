@@ -15,7 +15,7 @@
 
   programs.sway = {
     enable = true;
-    packages = pkgs.swayfx;
+    package = pkgs.swayfx;
     wrapperFeatures.gtk = true;
   };
 
