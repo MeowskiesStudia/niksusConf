@@ -5,7 +5,7 @@ let
   terminal = "${pkgs.alacritty}/bin/alacritty";
 in
 {
-  programs.sway = {
+  wayland.windowManager.sway = {
     checkConfig = false;
 
     extraConfig = ''
