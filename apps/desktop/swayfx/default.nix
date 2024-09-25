@@ -34,8 +34,8 @@ in
     #  inner = 3;
     #};
 
-    window = {
-      titlebar = false;
-    };
+    #window = {
+    #  titlebar = false;
+    #};
   };
 }
