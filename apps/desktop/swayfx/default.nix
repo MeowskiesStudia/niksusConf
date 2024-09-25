@@ -8,7 +8,7 @@ in
   programs.sway = {
     enable = true;
     package = pkgs.swayfx;
-    checkConfig = false;
+    #checkConfig = false;
 
     extraConfig = ''
       corner_radius 20
