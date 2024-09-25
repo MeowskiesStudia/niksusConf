@@ -42,7 +42,7 @@
   };
 
   programs.fish.enable = true;
-  programs.home-manager = {
+  home-manager = {
     useGlobalPkgs = true;
     useUserPackages = true;
   };
