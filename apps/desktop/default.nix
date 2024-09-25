@@ -2,7 +2,7 @@
 
 {
   imports = [
-
+    ./swayfx
   ];
 
   environment.systemPackages = with pkgs; [

@@ -5,7 +5,7 @@ let
   terminal = "${pkgs.alacritty}/bin/alacritty";
 in
 {
-  wayland.windowManager.sway = {
+  programs.sway = {
     enable = true;
     package = pkgs.swayfx;
     checkConfig = false;
@@ -29,13 +29,13 @@ in
       };
     };
 
-    #gaps = {
-    #  outer = 6;
-    #  inner = 3;
-    #};
+    gaps = {
+      outer = 6;
+      inner = 3;
+    };
 
-    #window = {
-    #  titlebar = false;
-    #};
+    window = {
+      titlebar = false;
+    };
   };
 }
