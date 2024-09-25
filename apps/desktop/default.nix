@@ -12,7 +12,7 @@
     home-manager
   ];
 
-  programs.fish.enable = true;
+  #programs.fish.enable = true;
 
   services = {
     displayManager.sddm.enable = true;

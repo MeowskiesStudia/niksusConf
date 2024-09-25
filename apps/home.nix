@@ -57,7 +57,7 @@
   #  /etc/profiles/per-user/soulcee/etc/profile.d/hm-session-vars.sh
   #
   home.sessionVariables = {
-    #EDITOR = "nvim";
+    EDITOR = "nvim";
   };
 
   programs.git = {
@@ -71,7 +71,7 @@
     };
   };
 
-  #programs.fish.enable = true;
+  programs.fish.enable = true;
 
   programs.home-manager.enable = true;
 }
