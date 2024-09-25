@@ -11,12 +11,13 @@
     kdePackages.plasma-pa
     home-manager
     fish
+    gdm
   ];
 
   #programs.fish.enable = true;
 
   services = {
-    displayManager.sddm.enable = true;
+    displayManager.gdm.enable = true;
     desktopManager.plasma6.enable = true;
 
     xserver = {
