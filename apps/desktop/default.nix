@@ -13,11 +13,11 @@
     gdm
   ];
 
-  programs.sway = {
-    enable = true;
-    package = pkgs.swayfx;
-    wrapperFeatures.gtk = true;
-  };
+  #programs.sway = {
+  #  enable = true;
+  #  package = pkgs.swayfx;
+  #  wrapperFeatures.gtk = true;
+  #};
 
   services = {
     xserver.displayManager.gdm = {

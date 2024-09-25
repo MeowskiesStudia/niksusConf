@@ -6,7 +6,9 @@ let
 in
 {
   wayland.windowManager.sway = {
-    checkConfig = true;
+    enable = true;
+    package = pkgs.swayfx;
+    checkConfig = false;
 
     extraConfig = ''
       corner_radius 20
