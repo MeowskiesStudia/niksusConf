@@ -50,6 +50,7 @@
     };
     defaultUserShell = pkgs.fish;
   };
+  security.polkit.enable = true;
 
   # Allow unfree packages
   nixpkgs.config = {
