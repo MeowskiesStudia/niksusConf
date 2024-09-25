@@ -62,5 +62,7 @@
   };
 
   programs.home-manager.enable = true;
+
+  security.polkit.enable = true;
 }
 
