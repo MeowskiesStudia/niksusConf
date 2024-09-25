@@ -15,7 +15,10 @@
   ];
 
   services = {
-    xserver.displayManager.gdm.enable = true;
+    xserver.displayManager.gdm = {
+      enable = true;
+      wayland = true;
+    };
     desktopManager.plasma6.enable = true;
 
     xserver = {
