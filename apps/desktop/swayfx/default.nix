@@ -1,5 +1,9 @@
 { config, lib, pkgs, ... }:
 
+let
+  super = "Mod4";
+  terminal = "${pkgs.alacritty}/bin/alacritty";
+in
 {
   wayland.windowManager.sway = {
     enable = true;
@@ -11,8 +15,7 @@
     '';
 
     config = {
-      modifier = "Mod4";
-      terminal = "alacritty";
+      modifier = super;
       input = {
         "type:keyboard" = {
           xkb_layout = "de";
