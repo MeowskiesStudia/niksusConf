@@ -73,13 +73,6 @@
 
   programs.fish.enable = true;
 
-  services.xserver = {
-    xkb = {
-      layout = "de";
-      variant = "nodeadkeys";
-    };
-  };
-
   programs.home-manager.enable = true;
 }
 
