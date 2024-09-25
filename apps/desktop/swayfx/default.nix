@@ -1,11 +1,7 @@
 { config, lib, pkgs, ... }:
 
-let
-  super = "Mod4";
-  terminal = "${pkgs.alacritty}/bin/alacritty";
-in
 {
-  programs.sway = {
+  wayland.windowManager.sway = {
     enable = true;
     package = pkgs.swayfx;
     #checkConfig = false;
@@ -15,7 +11,8 @@ in
     '';
 
     config = {
-      modifier = super;
+      modifier = "Mod4";
+      terminal = "alacritty";
       input = {
         "type:keyboard" = {
           xkb_layout = "de";
