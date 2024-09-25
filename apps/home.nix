@@ -17,12 +17,12 @@
     #   echo "Hello, ${config.home.username}!"
     # '')
     fish
-    #swayfx
+    swayfx
     alacritty
     discord
     sonic-visualiser
     neofetch
-    #polychromatic
+    polychromatic
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
