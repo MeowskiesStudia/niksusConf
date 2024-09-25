@@ -41,6 +41,7 @@
     };
   };
 
+  programs.fish.enable = true;
   users = {
     users.soulcee = {
       isNormalUser = true;

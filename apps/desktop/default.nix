@@ -10,6 +10,7 @@
     pipewire
     kdePackages.plasma-pa
     home-manager
+    fish
   ];
 
   #programs.fish.enable = true;

@@ -16,7 +16,6 @@
     # (pkgs.writeShellScriptBin "my-hello" ''
     #   echo "Hello, ${config.home.username}!"
     # '')
-    fish
     swayfx
     alacritty
     discord
@@ -70,8 +69,6 @@
       pull.rebase = false;
     };
   };
-
-  programs.fish.enable = true;
 
   programs.home-manager.enable = true;
 }
