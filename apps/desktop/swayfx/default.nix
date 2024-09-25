@@ -6,7 +6,7 @@ let
 in
 {
   wayland.windowManager.sway = {
-    checkConfig = false;
+    checkConfig = true;
 
     extraConfig = ''
       corner_radius 20
