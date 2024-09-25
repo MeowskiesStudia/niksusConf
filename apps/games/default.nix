@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 
 {
-  home.packages = with pkgs; [
+  environment.systemPackages = with pkgs; [
     steam
     protonup-qt
     lutris
@@ -11,4 +11,5 @@
     ckan
     heroic
   ];
+  programs.steam.enable = true;
 }

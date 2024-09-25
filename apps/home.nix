@@ -2,7 +2,7 @@
 
 {
   imports = [
-    ./games
+    #./games
     ./programming/git.nix
     ./desktop/swayfx
   ];
@@ -60,6 +60,8 @@
   home.sessionVariables = {
     EDITOR = "nvim";
   };
+
+
 
   programs.home-manager.enable = true;
 }

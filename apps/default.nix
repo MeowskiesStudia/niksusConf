@@ -2,7 +2,7 @@
 
 {
   imports = [
-    #./games
+    ./games
     ./desktop
     ./general
     ./programming
