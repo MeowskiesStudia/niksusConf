@@ -4,7 +4,6 @@
   imports = [
     inputs.nixvim.nixosModules.nixvim
     ./nixvim
-    ./gitTemp.nix
   ];
 
   environment.systemPackages = with pkgs; [
