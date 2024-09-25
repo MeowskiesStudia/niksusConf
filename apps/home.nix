@@ -4,7 +4,7 @@
   imports = [
     #./games
     ./programming/git.nix
-    #./desktop/swayfx
+    ./desktop/swayfx
   ];
   home.username = "soulcee";
   home.homeDirectory = "/home/soulcee";
@@ -12,12 +12,6 @@
   home.stateVersion = "24.11";
 
   home.packages = with pkgs; [
-    # # You can also create simple shell scripts directly inside your
-    # # configuration. For example, this adds a command 'my-hello' to your
-    # # environment:
-    # (pkgs.writeShellScriptBin "my-hello" ''
-    #   echo "Hello, ${config.home.username}!"
-    # '')
     swayfx
     alacritty
     discord

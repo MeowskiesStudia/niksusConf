@@ -2,7 +2,6 @@
 
 {
   imports = [
-    ./swayfx
   ];
 
   environment.systemPackages = with pkgs; [
@@ -13,6 +12,12 @@
     fish
     gdm
   ];
+
+  programs.swayfx = {
+    enable = true;
+    packages = pkgs.swayfx;
+    wrapperFeatures.gtk = true;
+  };
 
   services = {
     xserver.displayManager.gdm = {
