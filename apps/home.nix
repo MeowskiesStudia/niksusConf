@@ -57,10 +57,6 @@
 
 
 
-  programs.home-manager = {
-    enable = true;
-    useGlobalPkgs = true;
-    useUserPackages = true;
-  };
+  programs.home-manager.enable = true;
 }
 

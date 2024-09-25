@@ -42,6 +42,10 @@
   };
 
   programs.fish.enable = true;
+  programs.home-manager = {
+    useGlobalPkgs = true;
+    useUserPackages = true;
+  };
   users = {
     users.soulcee = {
       isNormalUser = true;
