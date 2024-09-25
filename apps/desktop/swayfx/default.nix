@@ -12,6 +12,8 @@ in
 
     extraConfig = ''
       corner_radius 20
+      gaps outer 6
+      gaps inner 3
     '';
 
     config = {
@@ -27,10 +29,10 @@ in
       };
     };
 
-    gaps = {
-      outer = 6;
-      inner = 3;
-    };
+    #gaps = {
+    #  outer = 6;
+    #  inner = 3;
+    #};
 
     window = {
       titlebar = false;
