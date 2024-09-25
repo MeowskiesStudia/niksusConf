@@ -13,7 +13,7 @@
     gdm
   ];
 
-  programs.swayfx = {
+  programs.sway = {
     enable = true;
     packages = pkgs.swayfx;
     wrapperFeatures.gtk = true;
