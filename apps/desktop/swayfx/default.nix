@@ -86,19 +86,21 @@ in
           text = "#000000";
         };
       };
-      bars = {
-        position = "top";
-        statusCommand = "while date +'%Y-%m-%d %X'; do sleep 1; done";
-        colors = {
-          statusline = "#ffffff";
-          background = "#100032cc";
-          inactiveWorkspace = {
-            background = "#32323200";
-            border = "#32323200";
-            text = "#5c5c5c";
+      bars = [
+        {
+          position = "top";
+          statusCommand = "while date +'%Y-%m-%d %X'; do sleep 1; done";
+          colors = {
+            statusline = "#ffffff";
+            background = "#100032cc";
+            inactiveWorkspace = {
+              background = "#32323200";
+              border = "#32323200";
+              text = "#5c5c5c";
+            };
           };
-        };
-      };
+        }
+      ];
     };
   };
 }
