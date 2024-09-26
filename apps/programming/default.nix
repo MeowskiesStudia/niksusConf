@@ -8,6 +8,7 @@
 
   environment.systemPackages = with pkgs; [
     dotnetCorePackages.sdk_9_0
+    python3
     wget
     git
     gh

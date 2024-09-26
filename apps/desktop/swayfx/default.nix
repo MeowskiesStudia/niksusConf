@@ -31,6 +31,9 @@ in
     '';
 
     config = {
+    startup = [
+      { command = "python3 ./scripts/swayfader.py"; }
+    ];
       # keys
       modifier = super;
       input = {
