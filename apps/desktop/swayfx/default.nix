@@ -74,6 +74,7 @@ in
           border = "#000000";
           background = "#A000DD";
           text = "#000000";
+          indicator = "#000000";
         };
         focusedInactive = {
           border = "#000000";
