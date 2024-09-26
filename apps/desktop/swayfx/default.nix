@@ -51,6 +51,9 @@ in
 
         "${super}+r" = "mode resize";
         "${super}+x" = "kill";
+
+        #logout
+        "${super}+Shift+e" = "exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'";
       };
       modes.resize = {
         h = "resize shrink width 10px";
