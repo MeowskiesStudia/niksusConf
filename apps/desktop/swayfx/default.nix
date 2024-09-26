@@ -39,8 +39,8 @@ in
           xkb_variant = "nodeadkeys";
         };
       };
+      floating.modifier = "${super}";
       keybindings = {
-        floating.modifier = "${super}";
         # appstart
         "${super}+t" = "exec ${terminal}";
         "${super}+w" = "exec ${web}";
@@ -48,18 +48,19 @@ in
         # appinteract
         "${super}+a" = "focus parent";
         "${super}+Shift+v" = "floating toggle";
-        modes.resize = {
-          h = "resize shrink width 10px";
-          j = "resize grow height 10px";
-          k = "resize shrink height 10px";
-          l = "resize grow width 10px";
 
-          # exit resize
-          Return = "mode default";
-          Escape = "mode default";
-        };
         "${super}+r" = "mode resize";
         "${super}+x" = "kill";
+      };
+      modes.resize = {
+        h = "resize shrink width 10px";
+        j = "resize grow height 10px";
+        k = "resize shrink height 10px";
+        l = "resize grow width 10px";
+
+        # exit resize
+        Return = "mode default";
+        Escape = "mode default";
       };
       # appearance
       gaps = {
@@ -74,17 +75,22 @@ in
           border = "#000000";
           background = "#A000DD";
           text = "#000000";
+          childBorder = "#000000";
           indicator = "#000000";
         };
         focusedInactive = {
           border = "#000000";
           background = "#500077";
           text = "#000000";
+          childBorder = "#000000";
+          indicator = "#000000";
         };
         unfocused = {
           border = "#000000";
           background = "#500077";
           text = "#000000";
+          childBorder = "#000000";
+          indicator = "#000000";
         };
       };
       bars = [
