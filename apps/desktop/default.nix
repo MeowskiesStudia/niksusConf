@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ inputs, config, pkgs, ... }:
 
 {
   imports = [
@@ -11,7 +11,7 @@
     home-manager
     fish
     gdm
-    python312Packages.i3ipc
+    inputs.swww.packages.${pkgs.system}.swww
   ];
 
   services = {

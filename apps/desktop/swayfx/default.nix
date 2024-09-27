@@ -32,7 +32,7 @@ in
 
     config = {
     startup = [
-      { command = "python3 ./scripts/swayfader.py"; }
+      { command = "nix-shell --run ./scripts/swayfader.py"; }
     ];
       # keys
       modifier = super;
