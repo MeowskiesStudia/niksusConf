@@ -11,13 +11,8 @@
     home-manager
     fish
     gdm
+    python312Packages.i3ipc
   ];
-
-  #programs.sway = {
-  #  enable = true;
-  #  package = pkgs.swayfx;
-  #  wrapperFeatures.gtk = true;
-  #};
 
   services = {
     xserver.displayManager = {
@@ -30,12 +25,12 @@
     desktopManager.plasma6.enable = true;
 
     xserver = {
-    enable = true;
-    xkb = {
-      layout = "de";
-      variant = "nodeadkeys";
+      enable = true;
+      xkb = {
+	layout = "de";
+	variant = "nodeadkeys";
+      };
     };
-  };
 
     pipewire = {
       enable = true;
