@@ -5,6 +5,7 @@
     [
       ./hardware-configuration.nix
       ./apps
+      #./Servers/Minecraft/serverMaster.nix #to be looked into further
     ];
 
   # Bootloader
