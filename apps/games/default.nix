@@ -1,6 +1,10 @@
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
+  imports = [
+    #./legacypkgs.nix
+  ];
+
   environment.systemPackages = with pkgs; [
     steam
     protonup-qt
