@@ -8,5 +8,6 @@
     firefox
     spotify
     libreoffice
+    gparted
   ];
 }
