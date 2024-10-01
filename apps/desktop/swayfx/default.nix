@@ -5,6 +5,7 @@ let
   terminal = "${pkgs.alacritty}/bin/alacritty";
   web = "${pkgs.firefox}/bin/firefox";
   file = "${pkgs.dolphin}/bin/dolphin";
+  dmenu = "${pkgs.fuzzel}/bin/fuzzel";
 in
 {
   wayland.windowManager.sway = {
@@ -48,6 +49,7 @@ in
         "${super}+t" = "exec ${terminal}";
         "${super}+w" = "exec ${web}";
         "${super}+f" = "exec ${file}";
+        "${super}+Shift+r" = "exec ${dmenu}";
         # appinteract
         "${super}+a" = "focus parent";
         "${super}+Shift+v" = "floating toggle";

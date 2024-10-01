@@ -9,5 +9,11 @@
     spotify
     libreoffice
     gparted
+    btrfs-progs
+    virt-manager
+    OVMF
   ];
+
+  virtualisation.libvirtd.enable = true;
+  programs.virt-manager.enable = true;
 }

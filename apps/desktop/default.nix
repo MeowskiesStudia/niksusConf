@@ -12,6 +12,7 @@
     fish
     gdm
     inputs.swww.packages.${pkgs.system}.swww
+    fuzzel
   ];
 
   services = {

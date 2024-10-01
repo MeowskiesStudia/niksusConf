@@ -5,6 +5,7 @@
     #./games
     ./programming/git.nix
     ./desktop/swayfx
+    ./desktop/fuzzel.nix
   ];
   home.username = "soulcee";
   home.homeDirectory = "/home/soulcee";
