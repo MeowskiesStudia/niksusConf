@@ -2,6 +2,8 @@
 from i3ipc import Connection, Event
 from threading import Thread
 from time import sleep
+import subprocess
+import os
 
 
 FRAME_T = 0.01  # time taken between each frame of fade
@@ -29,6 +31,7 @@ BOT_SWITCH_OUT = FADE_TIME      # bottom window becoming window
 FLOAT_BOT_OUT  = FADE_TIME      # floating window fading out from bottom
 FLOAT_BOT_IN   = FADE_TIME      # floating window fading in from bottom
 
+socketpath = str(subprocess.check_output("/bin/sh sway --get-socketpath",shell=True).decode().strip())
 
 class Fader:
     def __init__(self):
@@ -39,8 +42,8 @@ class Fader:
         self.bottom_win       = None
         self.old_win          = None
         self.active_win       = None
-
-        ipc = Connection("/run/user/1000/sway-ipc.1000.1800.sock")
+        
+        ipc = Connection(socketpath)
         ipc.on(Event.WINDOW_FOCUS,    self.on_window_focus)
         ipc.on(Event.WINDOW_NEW,      self.on_window_new)
         ipc.on(Event.WINDOW_FLOATING, self.on_window_floating)

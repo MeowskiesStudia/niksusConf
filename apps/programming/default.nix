@@ -12,5 +12,6 @@
     wget
     git
     gh
+    godot_4
   ];
 }
