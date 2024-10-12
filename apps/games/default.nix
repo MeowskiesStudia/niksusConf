@@ -14,6 +14,8 @@
     r2modman
     ckan
     heroic
+    flitter
   ];
   programs.steam.enable = true;
+  services.flatpak.enable = true;
 }

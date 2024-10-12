@@ -13,6 +13,9 @@
     gdm
     inputs.swww.packages.${pkgs.system}.swww
     fuzzel
+    xwaylandvideobridge
+    obs-studio
+    spectacle
   ];
 
   services = {
@@ -38,4 +41,8 @@
       pulse.enable = true;
     };
   };
+  xdg.portal = {
+      extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+      config.common.default = "gtk";
+    };
 }
