@@ -1,0 +1,5 @@
+{ ... }:
+
+{
+  imports = [ ./layan-cursor.nix ];
+}

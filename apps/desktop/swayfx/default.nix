@@ -32,9 +32,9 @@ in
     '';
 
     config = {
-    startup = [
-      { command = "nix-shell --run ./scripts/swayfader.py"; }
-    ];
+      startup = [
+	{ command = "swww-daemon"; }
+      ];
       # keys
       modifier = super;
       input = {
@@ -56,6 +56,12 @@ in
 
         "${super}+r" = "mode resize";
         "${super}+x" = "kill";
+
+	"${super}+1" = "workspace number 1";
+	"${super}+2" = "workspace number 2";
+	"${super}+3" = "workspace number 3";
+	"${super}+4" = "workspace number 4";
+	"${super}+5" = "workspace number 5";
 
         #logout
         "${super}+Shift+e" = "exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'";

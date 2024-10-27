@@ -5,14 +5,14 @@
     plugins.lsp = {
       enable = true;
       servers = {
-        rust-analyzer = {
+        rust_analyzer = {
           enable = true;
           installCargo = true;
           installRustc = true;
         };
         nixd.enable = true;
         omnisharp.enable = true;
-        java-language-server.enable = true;
+        java_language_server.enable = true;
         clangd.enable = true;
       };
     };

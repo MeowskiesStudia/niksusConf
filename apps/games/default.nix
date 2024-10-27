@@ -14,6 +14,7 @@
     r2modman
     ckan
     heroic
+    parsec-bin
     flitter
   ];
   programs.steam.enable = true;
