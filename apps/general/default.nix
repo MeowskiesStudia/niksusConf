@@ -15,6 +15,7 @@
 
   environment.systemPackages = with pkgs; [
     firefox
+    floorp
     spotify
     alacritty
     gparted
@@ -27,6 +28,7 @@
     appimage-run
     tmux
     unzip
+    scrot
   ];
 
   virtualisation.libvirtd.enable = true;

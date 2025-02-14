@@ -5,9 +5,7 @@
   ];
 
   environment.systemPackages = with pkgs; [
-    kdePackages.plasma-desktop
     pipewire
-    kdePackages.plasma-pa
     home-manager
     fish
     gdm
@@ -27,8 +25,6 @@
     iamb
     element-desktop
     greetd.tuigreet
-    w3m
-    #inputs.hyprland
   ];
 
   programs.hyprland = {
@@ -37,13 +33,6 @@
   };
 
   services = {
-    displayManager = {
-      #gdm = {
-      #  enable = true;
-      #  wayland = true;
-      #};
-      #sddm.enable = true;
-    };
     greetd = {
       enable = true;
       settings = {
