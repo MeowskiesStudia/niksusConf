@@ -1,17 +1,31 @@
-{ pkgs, ... }:
+{ pkgs, inputs, system, ... }:
 
 {
   imports = [
     #./alacritty.nix
+    #./tmux.nix
   ];
+
+  #nixpkgs.overlays = [
+  #  (self: super: {
+  #    uns = inputs.nixpkgs-unstable;
+  #  })
+  #];
+
   environment.systemPackages = with pkgs; [
     firefox
     spotify
-    libreoffice
+    alacritty
     gparted
     btrfs-progs
-    virt-manager
-    OVMF
+    obsidian
+    vlc
+    unrar-free
+    btop
+    mesa
+    appimage-run
+    pavucontrol
+    tmux
   ];
 
   virtualisation.libvirtd.enable = true;

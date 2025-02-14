@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 {
   imports =
@@ -43,15 +43,17 @@
   };
 
   programs.fish.enable = true;
+  programs.nix-ld.enable = true;
   home-manager = {
     useGlobalPkgs = true;
     useUserPackages = true;
+    users.soulcee = import ./apps/home.nix;
   };
   users = {
     users.soulcee = {
       isNormalUser = true;
       description = "Morgan";
-      extraGroups = [ "networkmanager" "wheel" ];
+      extraGroups = [ "networkmanager" "wheel" "openrazer" ];
     };
     defaultUserShell = pkgs.fish;
   };
@@ -59,16 +61,18 @@
 
   # Allow unfree packages
   nixpkgs.config = {
+    permittedInsecurePackages = [ "dotnet-core-combined" "dotnet-sdk-6.0.428" "dotnet-sdk-wrapped-6.0.428" "dotnet-runtime-6.0.36" ];
     allowUnfree = true;
     allowBroken = true;
+    allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [ "osu-lazer" ];
   };
 
-  #nix = {
-  #  package = pkgs.nixFlakes;
-  #  extraOptions = ''
-  #    experimental-features = nix-command flakes
-  #  '';
-  #};
+  nix = {
+    extraOptions = ''
+      experimental-features = nix-command flakes
+    '';
+  };
+  environment.sessionVariables.NIXOS_OZONE_WL=1;
 
   # List services that you want to enable:
 

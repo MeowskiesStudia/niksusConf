@@ -16,16 +16,32 @@
     xwaylandvideobridge
     obs-studio
     spectacle
+    openrazer-daemon
+    networkmanagerapplet
+    thunderbird
+    iamb
+    element-desktop
+    greetd.tuigreet
+    w3m
+    #inputs.hyprland
   ];
 
+  programs.hyprland = {
+    enable = true;
+    xwayland.enable = true;
+  };
+
   services = {
-    xserver.displayManager = {
-      gdm = {
-        enable = true;
-        wayland = true;
-      };
+    displayManager = {
+      #gdm = {
+      #  enable = true;
+      #  wayland = true;
+      #};
+      sddm.enable = true;
+      #greetd.enable = true;
     };
-    displayManager.sessionPackages = [ pkgs.sway ];
+    #greetd.enable = true;
+    #displayManager.sessionPackages = [ pkgs.sway ];
     desktopManager.plasma6.enable = true;
 
     xserver = {
@@ -42,6 +58,7 @@
     };
   };
   xdg.portal = {
+      enable = true;
       extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
       config.common.default = "gtk";
     };

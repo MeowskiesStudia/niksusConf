@@ -6,6 +6,7 @@
     ./desktop
     ./general
     ./programming
+    ./art
     inputs.home-manager.nixosModules.home-manager
   ];
   home-manager = {

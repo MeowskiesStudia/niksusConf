@@ -8,8 +8,13 @@
     ./undotree.nix
     ./fugitive.nix
     ./lsp.nix
+    ./oil.nix
   ];
   programs.nixvim.plugins = {
+    mini = {
+      enable = true;
+      modules.icons.MiniIcons = "get()"; 
+    };
     web-devicons.enable = true;
   };
 }

@@ -2,11 +2,13 @@
 
 {
   imports = [
-    #./games
+    ./desktop/hyprland
     ./programming/git.nix
     ./desktop/swayfx
     ./desktop/fuzzel.nix
     #../theme.nix
+    ./general/tmux.nix
+    ./general/alacritty.nix
   ];
   home.username = "soulcee";
   home.homeDirectory = "/home/soulcee";
@@ -15,10 +17,10 @@
 
   home.packages = with pkgs; [
     swayfx
-    alacritty
     discord
-    sonic-visualiser
+    #sonic-visualiser
     neofetch
+    python312Packages.openrazer
     polychromatic
   ];
 

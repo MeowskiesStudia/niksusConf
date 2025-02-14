@@ -63,6 +63,13 @@ in
 	"${super}+4" = "workspace number 4";
 	"${super}+5" = "workspace number 5";
 
+	"${super}+Shift+1" = "move container to workspace number 1";
+	"${super}+Shift+2" = "move container to workspace number 2";
+	"${super}+Shift+3" = "move container to workspace number 3";
+
+	"${super}+b" = "splith";
+	"${super}+v" = "splitv";
+
         #logout
         "${super}+Shift+e" = "exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'";
       };
@@ -83,6 +90,16 @@ in
       };
       window = {
         titlebar = false;
+	commands = [
+	  {
+	    command = "opacity 0.95";
+	    criteria.con_id = "__focused__";
+	  }
+	  {
+	    command = "opacity 0.75";
+	    criteria.app_id = ".*";
+	  }
+	];
       };
       colors = {
         focused = {

@@ -1,22 +1,24 @@
-{ config, pkgs, inputs, ... }:
+{ pkgs, ... }:
 
 {
   imports = [
-    #./legacypkgs.nix
   ];
 
   environment.systemPackages = with pkgs; [
     steam
+    scarab
     protonup-qt
+    protontricks
     lutris
     prismlauncher
-    minecraft
     r2modman
     ckan
-    heroic
-    parsec-bin
+    legendary-gl
+    rare
     flitter
+    vkquake
   ];
+
   programs.steam.enable = true;
   services.flatpak.enable = true;
 }

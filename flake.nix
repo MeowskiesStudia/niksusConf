@@ -2,35 +2,54 @@
   description = "A very basic flake";
 
   inputs = {
+    # nix
     flake-parts.url = "github:hercules-ci/flake-parts";
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-24.05";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-24.11";
+    #nixpkgs.follows = "github:nixos/nixpkgs/nixos-24.11";
+    #nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
+    
+    # personal
     nixvim = {
       url = "github:nix-community/nixvim";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    swww.url = "github:LGFae/swww";
+    swww = {
+      url = "github:LGFae/swww";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    nix-minecraft.url = "github:Infinidoge/nix-minecraft";
+    hyprland = {
+      url = "github:hyprwm/Hyprland";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    #nix-minecraft.url = "github:Infinidoge/nix-minecraft";
   };
 
-  outputs = { self, nixpkgs, nixpkgs-stable, ... } @inputs:
+  outputs = { nixpkgs, ... } @inputs:
     inputs.flake-parts.lib.mkFlake { inherit inputs; } {
     systems = [
       "x86_64-linux"
     ];
-    imports = [
-      #./apps/programming/nixvim/flake.nix
-    ];
+
     flake = {
       nixosConfigurations.hand-niksus = nixpkgs.lib.nixosSystem {
-        specialArgs = { inherit inputs; };
+        specialArgs = {
+          inherit inputs;
+        };
         modules = [
           ./configuration.nix
         ];
+      };
+
+      homeConfigurations = {
+        "soulcee@hand-niksus" = inputs.home-manager.lib.homeManagerConfiguration {
+          pkgs = nixpkgs.legacyPackages.x86_64-linux;
+          specialArgs = { inherit inputs; };
+          modules = [ ./apps/home.nix ];
+        };
       };
     };
   };
