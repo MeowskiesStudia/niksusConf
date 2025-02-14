@@ -23,6 +23,18 @@ in
   stylix = {
     enable = true;
     base16Scheme = "${pkgs.base16-schemes}/share/themes/rose-pine.yaml";
-    image = ../../../home/soulcee/Pictures/Wallpapers/wp4.jpg;
+    
+    cursor.package = pkgs.oreo-cursors-plus;
+    cursor.name = "oreo_purple_cursors";
+    cursor.size = 12;
+
+    fonts = {
+      monospace = {
+	package = pkgs.source-code-pro;
+	name = "Source Code Pro";
+      };
+    };
+
+    image = ./wp4.jpg;
   };
 }

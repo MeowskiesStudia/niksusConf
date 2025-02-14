@@ -25,6 +25,7 @@ in
 
       exec-once = [
 	"nm-applet"
+	"hyprctl setcursor oreo-cursors-plus 12"
       ];
 
       general = {
@@ -134,9 +135,14 @@ in
         "${mod}_SHIFT, r, exec, ${dmenu}"
 	"${mod}_SHIFT, p, exec, ${pavu}"
 
+	#internet
 	"${mod}_SHIFT, i, exec, ${web}"
 	"${mod}_SHIFT, i, exec, ${pkgs.discord}/bin/discord"
 	"${mod}_SHIFT, i, exec, ${pkgs.spotify}/bin/spotify"
+
+	#game
+
+	#dev
 
 
         "${mod}, x, killactive"
