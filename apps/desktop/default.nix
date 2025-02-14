@@ -11,8 +11,13 @@
     home-manager
     fish
     gdm
+    #start
     inputs.swww.packages.${pkgs.system}.swww
     fuzzel
+    eww
+    dunst
+    pavucontrol
+    #end
     xwaylandvideobridge
     obs-studio
     spectacle
@@ -37,12 +42,18 @@
       #  enable = true;
       #  wayland = true;
       #};
-      sddm.enable = true;
-      #greetd.enable = true;
+      #sddm.enable = true;
     };
-    #greetd.enable = true;
+    greetd = {
+      enable = true;
+      settings = {
+	default_session = {
+	  command = "${pkgs.greetd.tuigreet}/bin/tuigreet --sessions ${pkgs.hyprland}/bin/hyprland --remember --remember-user-session";
+	};
+      };
+    };
     #displayManager.sessionPackages = [ pkgs.sway ];
-    desktopManager.plasma6.enable = true;
+    #desktopManager.plasma6.enable = true;
 
     xserver = {
       enable = true;

@@ -3,13 +3,19 @@
 let
   mod = "SUPER";
   term = "${pkgs.alacritty}/bin/alacritty";
-  web = "${pkgs.firefox}/bin/firefox";
   file = "${pkgs.dolphin}/bin/dolphin";
   dmenu = "${pkgs.fuzzel}/bin/fuzzel";
+  pavu = "${pkgs.pavucontrol}/bin/pavucontrol";
+
+  #internet
+  web = "${pkgs.firefox}/bin/firefox";
+  #internet = lib.concatStrings [
+  #  web
+  #  "${pkgs.discord}/bin/discord"
+  #  "${pkgs.spotify}/bin/spotify"
+  #];
 in
 {
-  nixpkgs.overlays = [ (final: prev: pkgs.mesa) ];
-
   wayland.windowManager.hyprland = {
     enable = true;
     package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
@@ -17,7 +23,9 @@ in
     settings = {
       monitor = ",preferred,2560x1440@165,auto";
 
-      exec-once = "nm-applet";
+      exec-once = [
+	"nm-applet"
+      ];
 
       general = {
         gaps_in = 3;
@@ -25,8 +33,8 @@ in
 
         border_size = 3;
 
-        "col.active_border" = "rgba(A000DDFF)";
-        "col.inactive_border" = "rgba(500077FF)";
+        #"col.active_border" = "rgba(A000DDFF)";
+        #"col.inactive_border" = "rgba(500077FF)";
 
         resize_on_border = false;
 
@@ -124,6 +132,11 @@ in
         "${mod}, w, exec, ${web}"
         "${mod}, f, exec, ${file}"
         "${mod}_SHIFT, r, exec, ${dmenu}"
+	"${mod}_SHIFT, p, exec, ${pavu}"
+
+	"${mod}_SHIFT, i, exec, ${web}"
+	"${mod}_SHIFT, i, exec, ${pkgs.discord}/bin/discord"
+	"${mod}_SHIFT, i, exec, ${pkgs.spotify}/bin/spotify"
 
 
         "${mod}, x, killactive"
@@ -136,7 +149,7 @@ in
         "${mod}, j, movefocus, d"
         "${mod}, k, movefocus, u"
 
-        "${mod}, 1, workspace, 1"
+        "${mod}, 1, exec, hyprctl dispatch workspace 1"
         "${mod}, 2, workspace, 2"
         "${mod}, 3, workspace, 3"
         "${mod}, 4, workspace, 4"

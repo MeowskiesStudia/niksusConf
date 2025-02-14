@@ -4,18 +4,25 @@ let
   layan-cursors = import ./theme/layan-cursor.nix { inherit pkgs; };
 in
 {
-  qt = {
-    enable = true;
-    platformTheme = "gtk";
-    style = {
-      name = "adwaita-dark";
-      package = pkgs.adwaita-qt;
-    };
-  };
+  #qt = {
+  #  enable = true;
+  #  platformTheme.name = "gtk";
+  #  style = {
+  #    name = "adwaita-dark";
+  #    package = pkgs.adwaita-qt;
+  #  };
+  #};
 
-  gtk = {
+  #home.pointerCursor = {
+  #  gtk.enable = true;
+  #  package = layan-cursors;
+  #  name = "layan-cursors";
+  #  size = 16;
+  #};
+
+  stylix = {
     enable = true;
-    cursorTheme.package = layan-cursors;
-    cursorTheme.name = "layan-cursors";
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/rose-pine.yaml";
+    image = ../../../home/soulcee/Pictures/Wallpapers/wp4.jpg;
   };
 }

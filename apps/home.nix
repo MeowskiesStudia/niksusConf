@@ -4,7 +4,7 @@
   imports = [
     ./desktop/hyprland
     ./programming/git.nix
-    ./desktop/swayfx
+    #./desktop/swayfx
     ./desktop/fuzzel.nix
     #../theme.nix
     ./general/tmux.nix

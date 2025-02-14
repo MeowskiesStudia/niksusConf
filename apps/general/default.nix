@@ -4,6 +4,7 @@
   imports = [
     #./alacritty.nix
     #./tmux.nix
+    ../../theme.nix
   ];
 
   #nixpkgs.overlays = [
@@ -24,8 +25,8 @@
     btop
     mesa
     appimage-run
-    pavucontrol
     tmux
+    unzip
   ];
 
   virtualisation.libvirtd.enable = true;

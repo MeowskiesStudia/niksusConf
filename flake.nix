@@ -25,6 +25,11 @@
       url = "github:hyprwm/Hyprland";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    stylix = {
+      url = "github:danth/stylix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     #nix-minecraft.url = "github:Infinidoge/nix-minecraft";
   };
 
@@ -41,6 +46,7 @@
         };
         modules = [
           ./configuration.nix
+	  inputs.stylix.nixosModules.stylix
         ];
       };
 
@@ -48,7 +54,10 @@
         "soulcee@hand-niksus" = inputs.home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages.x86_64-linux;
           specialArgs = { inherit inputs; };
-          modules = [ ./apps/home.nix ];
+          modules = [
+	    ./apps/home.nix
+	    #inputs.stylix.homeManagerModules.stylix
+	  ];
         };
       };
     };

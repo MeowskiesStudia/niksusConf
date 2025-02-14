@@ -4,8 +4,8 @@ pkgs.stdenv.mkDerivation {
   name = "layan-cursors";
 
   src = pkgs.fetchurl {
-    url = "https://github.com/vinceliuice/Layan-cursors/releases/.../pack.zip";
-    sha256 = pkgs.lib.fakeSha256;
+    url = "https://github.com/vinceliuice/Layan-cursors/archive/refs/tags/2021-08-01.zip";
+    sha256 = "sha256-S1/sM4SYOzqY3yaQxXF23nJpYp+2AeWYTKzTU4GrRys=";
   };
 
   dontUnpack = true;
