@@ -1,19 +1,15 @@
-{ pkgs, inputs, config, lib, ... }:
+{ pkgs, inputs, ... }:
 
 let
   mod = "SUPER";
   term = "${pkgs.alacritty}/bin/alacritty";
-  file = "${pkgs.dolphin}/bin/dolphin";
+  file = "${pkgs.xfce.thunar}/bin/thunar";
   dmenu = "${pkgs.fuzzel}/bin/fuzzel";
   pavu = "${pkgs.pavucontrol}/bin/pavucontrol";
+  scr = "${pkgs.grim}/bin/grim";
 
   #internet
-  web = "${pkgs.firefox}/bin/firefox";
-  #internet = lib.concatStrings [
-  #  web
-  #  "${pkgs.discord}/bin/discord"
-  #  "${pkgs.spotify}/bin/spotify"
-  #];
+  web = "${pkgs.floorp}/bin/floorp";
 in
 {
   wayland.windowManager.hyprland = {
@@ -33,9 +29,6 @@ in
         gaps_out = 6;
 
         border_size = 3;
-
-        #"col.active_border" = "rgba(A000DDFF)";
-        #"col.inactive_border" = "rgba(500077FF)";
 
         resize_on_border = false;
 
@@ -61,8 +54,6 @@ in
 
       animations = {
         enabled = "yes, please :)";
-
-        # Default animations, see https://wiki.hyprland.org/Configuring/Animations/ for more
 
         bezier = [
           "easeOutQuint,0.23,1,0.32,1"
@@ -145,12 +136,10 @@ in
 	"${mod}_SHIFT, g, exec, ${pkgs.rare}/bin/rare"
 	"${mod}_SHIFT, g, exec, ${pkgs.prismlauncher}/bin/prismlauncher"
 
-	#"${mod}, l, exec, ${pkgs.scrot}/bin/scrot"
-	#"${mod}_SHIFT, l, exec, ${pkgs.scrot}/bin/scrot -sf"
-	#"${mod}_ALT, l, exec, ${pkgs.scrot}/bin/scrot -u"
+	"${mod}, o, exec, ${scr} /home/soulcee/Pictures/Screenshots/$(date +'%s_grim.png')"
+	"${mod}_SHIFT, o, exec, ${scr} -g \"$(slurp)\" /home/soulcee/Pictures/Screenshots/$(date +'%s_grim.png')"
 
         "${mod}, x, killactive"
-
 
         "${mod}_SHIFT, e, exit"
         "${mod}, v, togglefloating"

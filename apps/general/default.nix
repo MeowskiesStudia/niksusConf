@@ -29,6 +29,10 @@
     tmux
     unzip
     scrot
+    grim
+    slurp
+    xfce.thunar
+    ark
   ];
 
   virtualisation.libvirtd.enable = true;

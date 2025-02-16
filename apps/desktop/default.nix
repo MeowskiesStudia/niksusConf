@@ -8,7 +8,6 @@
     pipewire
     home-manager
     fish
-    gdm
     #start
     inputs.swww.packages.${pkgs.system}.swww
     fuzzel
@@ -18,19 +17,21 @@
     #end
     xwaylandvideobridge
     obs-studio
-    spectacle
     openrazer-daemon
     networkmanagerapplet
     thunderbird
     iamb
     element-desktop
     greetd.tuigreet
+    hyprpolkitagent
   ];
 
   programs.hyprland = {
     enable = true;
     xwayland.enable = true;
   };
+
+  #programs.hyprpolkitagent.enable = true;
 
   services = {
     greetd = {
