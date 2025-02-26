@@ -33,6 +33,7 @@
     slurp
     xfce.thunar
     ark
+    amdvlk
   ];
 
   virtualisation.libvirtd.enable = true;

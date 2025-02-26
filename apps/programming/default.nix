@@ -13,5 +13,6 @@
     git
     gh
     godot_4
+    vulkan-helper
   ];
 }

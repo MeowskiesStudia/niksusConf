@@ -5,12 +5,15 @@
     [
       ./hardware-configuration.nix
       ./apps
-      #./Servers/Minecraft/serverMaster.nix #to be looked into further
+      #./Servers #to be looked into further
     ];
 
   # Bootloader
   boot.loader = {
-    systemd-boot.enable = true;
+    systemd-boot = {
+      enable = true;
+      configurationLimit = 25;
+    };
     efi.canTouchEfiVariables = true;
   };
 
@@ -68,6 +71,12 @@
   };
 
   nix = {
+    settings.auto-optimise-store = true;
+    gc = {
+      automatic = true;
+      dates = "daily";
+      options = "--delete-older-than +5";
+    };
     extraOptions = ''
       experimental-features = nix-command flakes
     '';

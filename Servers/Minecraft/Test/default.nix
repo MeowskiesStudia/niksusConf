@@ -1,23 +1,20 @@
-{ inputs, ... }:
+{ inputs, pkgs, lib, ... }:
 
 {
-  imports = [ inputs.nix-minecraft.nixosModules.minecraft-servers ];
-  nixpkgs.overlays = [ inputs.nix-minecraft.overlay ];
+  #imports = [ inputs.minecraft.nixosModules.minecraft-servers ];
+  #nixpkgs.overlays = [ inputs.minecraft.overlay ];
 
-  services.minecraft-servers = {
+  services.minecraft-server = {
     enable = true;
     eula = true;
 
-    servers = {
-      serv1 = {
-        enable = true;
-        serverProperties = {
-          gamemode = "survival";
-          difficulty = "easy";
-          simulation-distance = 12;
-        };
-        jvmOpts = "-Xms4092M -Xmx4092M";
-      };
+    serverProperties = {
+      gamemode = "survival";
+      difficulty = "hard";
     };
+
+    jvmOpts = "-Xms4092M -Xmx4092M -XX +UseG1GC";
+    
+    package = pkgs.minecraft-server-1-12;
   };
 }

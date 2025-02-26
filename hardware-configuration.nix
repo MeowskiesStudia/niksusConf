@@ -39,4 +39,7 @@
   hardware.openrazer.enable = true;
   hardware.bluetooth.enable = true;
   hardware.graphics.enable = true;
+  hardware.graphics.extraPackages = [
+    pkgs.amdvlk
+  ];
 }

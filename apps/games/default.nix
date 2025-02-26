@@ -17,6 +17,7 @@
     rare
     flitter
     vkquake
+    pcsx2
   ];
 
   programs.steam.enable = true;

@@ -1,0 +1,7 @@
+{ ... }:
+
+{
+  imports = [
+    ./Minecraft/serverMaster.nix
+  ];
+}
