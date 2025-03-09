@@ -18,6 +18,7 @@
     flitter
     vkquake
     pcsx2
+    owmods-cli
   ];
 
   programs.steam.enable = true;

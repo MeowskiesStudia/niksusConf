@@ -9,6 +9,7 @@
     ./fugitive.nix
     ./lsp.nix
     ./oil.nix
+    ./packer.nix
   ];
   programs.nixvim.plugins = {
     mini = {

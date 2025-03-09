@@ -13,6 +13,7 @@
       rust
       c_sharp
       cpp
+      glsl
       fish
       git_config
       git_rebase
