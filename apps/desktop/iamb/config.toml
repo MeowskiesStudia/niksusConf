@@ -1,0 +1,5 @@
+default_profile = "default"
+
+[profiles.default]
+user_id = "@siedrache:matrix.org"
+url = "https://matrix.org"
