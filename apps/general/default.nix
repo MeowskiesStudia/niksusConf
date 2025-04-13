@@ -14,8 +14,8 @@
   #];
 
   environment.systemPackages = with pkgs; [
-    firefox
     floorp
+    vivaldi
     spotify
     alacritty
     gparted
@@ -26,15 +26,14 @@
     btop
     mesa
     appimage-run
-    tmux
     unzip
-    scrot
     grim
     slurp
     xfce.thunar
     ark
-    amdvlk
+    p7zip
   ];
+  fonts.packages = with pkgs; [ nerdfonts ];
 
   virtualisation.libvirtd.enable = true;
   programs.virt-manager.enable = true;

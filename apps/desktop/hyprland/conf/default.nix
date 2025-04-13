@@ -3,7 +3,7 @@
 let
   mod = "SUPER";
   term = "${pkgs.alacritty}/bin/alacritty";
-  file = "${pkgs.xfce.thunar}/bin/thunar";
+  file = "${term} -e fish -c \"nvim ~/\"";
   dmenu = "${pkgs.fuzzel}/bin/fuzzel";
   pavu = "${pkgs.pavucontrol}/bin/pavucontrol";
   scr = "${pkgs.grim}/bin/grim";
@@ -14,7 +14,7 @@ in
 {
   wayland.windowManager.hyprland = {
     enable = true;
-    package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
+    #package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
 
     settings = {
       monitor = ",preferred,2560x1440@165,auto";
@@ -94,7 +94,6 @@ in
 
       misc = {
         force_default_wallpaper = 3;
-        disable_hyprland_logo = false;
       };
 
       input = {

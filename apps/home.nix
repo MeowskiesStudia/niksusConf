@@ -55,6 +55,13 @@
   #
   #  /etc/profiles/per-user/soulcee/etc/profile.d/hm-session-vars.sh
   #
+  xdg.mime.enable = true;
+  xdg.mimeApps = {
+    enable = true;
+    defaultApplications = {
+    };
+    #todo to clarify what files are opened with
+  };
   home.sessionVariables = {
     EDITOR = "nvim";
   };

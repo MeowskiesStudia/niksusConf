@@ -12,8 +12,16 @@
     opts = {
       number = true;
       relativenumber = true;
+      cmdheight = 0;
 
       shiftwidth = 2;
     };
+    autoCmd = [
+      {
+	command = "Twilight";
+	event = [ "VimEnter" ];
+	pattern = "*";
+      }
+    ];
   };
 }

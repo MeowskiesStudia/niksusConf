@@ -24,6 +24,7 @@
       #gdresource
       gdshader
       java
+      norg
     ];
   };
 }

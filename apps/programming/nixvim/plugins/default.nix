@@ -3,7 +3,7 @@
 {
   imports = [
     ./telescope.nix
-    ./harpoon.nix
+    #./harpoon.nix
     ./treesitter.nix
     ./undotree.nix
     ./fugitive.nix

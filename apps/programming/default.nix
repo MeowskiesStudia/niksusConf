@@ -14,5 +14,6 @@
     gh
     godot_4
     vulkan-helper
+    kicad
   ];
 }

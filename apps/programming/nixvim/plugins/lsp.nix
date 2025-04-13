@@ -16,6 +16,7 @@
         clangd.enable = true;
 	glsl_analyzer.enable = true;
       };
+      inlayHints = true;
     };
     plugins.cmp = {
       autoEnableSources = true;
